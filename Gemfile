@@ -31,6 +31,9 @@ gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 
+# Capistrano deployments
+gem 'capistrano', '~> 2.15.5'
+
 # `attr_accessible` no longer belongs in Rails
 gem 'protected_attributes'
 

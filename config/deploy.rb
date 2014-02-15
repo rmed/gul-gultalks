@@ -14,6 +14,9 @@ set :user, "gultalks"
 
 role :web, "163.117.156.71"                         # Your HTTP server, Apache/etc
 role :db, "163.117.156.71", :primary=> true
+
+
+after "deploy", "deploy:migrate"
 after "deploy", "deploy:restart" 
 
 namespace :deploy do

@@ -14,10 +14,10 @@ Gultalks::Application.routes.draw do
 
   # Event creation
   match 'new_conference_event', to: 'events#new', via: :get, path: '/:conference_id/new'
-  match 'basic_events', to: 'events#new_basic', via: :get, path: '/:conference_id/new_basic'
-  match 'create_basic_event', to: 'events#create_basic', via: :post, path: '/:conference_id/new_basic/create'
-  match 'detailed_events', to: 'events#new_detailed', via: :get, path: '/:conference_id/new_detailed'
-  match 'create_detailed_event', to: 'events#create_detailed', via: :post, path: '/:conference_id/new_detailed/create'
+  match 'basic_events', to: 'events#new_basic', via: :get, path: '/:conference_id/new/basic'
+  match 'create_basic_event', to: 'events#create_basic', via: :post, path: '/:conference_id/new/basic'
+  match 'detailed_events', to: 'events#new_detailed', via: :get, path: '/:conference_id/new/detailed'
+  match 'create_detailed_event', to: 'events#create_detailed', via: :post, path: '/:conference_id/new/detailed'
 
   # Events
   match 'conference_events', to: 'events#index', via: :get, path: '/:conference_id/events'
@@ -25,7 +25,7 @@ Gultalks::Application.routes.draw do
   match 'propose_speaker_conference_event', to: 'events#propose_speaker', via: :get, path: '/:conference_id/:id/propose_speaker'
   match 'send_speaker_conference_event', to: 'events#send_speaker', via: :post, path: '/:conference_id/:id/propose_speaker'
   match 'vote_conference_event', to: 'events#vote', via: :get, path: '/:conference_id/:id/vote'
-  match 'send_vote_conference_event', to: 'events#send_vote', via: :post, path: '/:conference_id/:id/send_vote'
+  match 'send_vote_conference_event', to: 'events#send_vote', via: :post, path: '/:conference_id/:id/vote'
 
   # Comments
   resources :comments, path: '/:conference_id/:event_id/comments'
